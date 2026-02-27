@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MedAxis | AI-Powered Healthcare Management System</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+body{background:#f8f9fb;color:#333;line-height:1.6;overflow-x:hidden;}
+a{text-decoration:none;color:inherit;}
+ul{list-style:none;}
+.topbar{background:#8b0000;color:#fff;padding:10px 8%;display:flex;justify-content:space-between;font-size:14px;}
+nav{background:#fff;padding:20px 8%;display:flex;justify-content:space-between;align-items:center;box-shadow:0 3px 15px rgba(0,0,0,0.08);position:sticky;top:0;z-index:1000;}
+nav h2{color:#8b0000;font-size:28px;}
+nav ul{display:flex;align-items:center;}
+nav ul li{margin-left:30px;}
+nav ul li a{font-weight:500;transition:0.3s;font-size:15px;}
+nav ul li a:hover{color:#d00000;}
+nav ul li a.active{color:#8b0000;font-weight:600;}
+nav .demo{background:#8b0000;color:#fff;padding:10px 20px;border-radius:6px;font-weight:600;transition:0.3s;}
+nav .demo:hover{background:#a00000;transform:translateY(-2px);}
+span{color:#00ced1;}
+.hero{position:relative;background:linear-gradient(135deg,rgba(139,0,0,0.95) 0%,rgba(139,0,0,0.85) 50%,rgba(139,0,0,0.4) 100%),url("https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=1920");background-size:cover;background-position:center;color:white;padding:180px 8% 120px;min-height:100vh;display:flex;align-items:center;border-bottom-right-radius:150px;}
+.hero-content{max-width:700px;opacity:0;transform:translateY(50px);transition:all 0.8s ease;}
+.hero h1{font-size:52px;margin-bottom:20px;line-height:1.2;font-weight:700;}
+.hero p{font-size:20px;margin-bottom:30px;opacity:0.95;}
+.hero-buttons{display:flex;gap:15px;flex-wrap:wrap;}
+.hero button{padding:15px 30px;border:none;border-radius:8px;cursor:pointer;font-weight:600;font-size:16px;transition:all 0.3s;}
+.hero .btn-primary{background:#fff;color:#8b0000;}
+.hero .btn-primary:hover{transform:translateY(-5px);box-shadow:0 10px 25px rgba(0,0,0,0.2);}
+.hero .btn-secondary{background:transparent;color:#fff;border:2px solid #fff;}
+.hero .btn-secondary:hover{background:#fff;color:#8b0000;}
+.stats{background:#8b0000;color:#fff;padding:80px 8%;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:40px;text-align:center;margin-top:-50px;position:relative;z-index:10;border-radius:20px;margin-left:8%;margin-right:8%;box-shadow:0 10px 40px rgba(139,0,0,0.3);}
+.stat-item h3{font-size:48px;margin-bottom:10px;font-weight:700;}
+.stat-item p{font-size:16px;opacity:0.9;}
+section{padding:100px 8%;}
+section h2{color:#8b0000;font-size:38px;margin-bottom:20px;text-align:center;font-weight:700;}
+.section-subtitle{text-align:center;color:#666;margin-bottom:50px;font-size:18px;}
+.features{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:30px;}
+.card{background:#fff;padding:35px 30px;border-radius:15px;box-shadow:0 8px 25px rgba(0,0,0,0.08);text-align:center;transition:all 0.4s;opacity:0;transform:translateY(30px);border-top:4px solid #8b0000;}
+.card:hover{transform:translateY(-12px);box-shadow:0 15px 40px rgba(0,0,0,0.15);}
+.card i{font-size:48px;color:#8b0000;margin-bottom:20px;}
+.card h3{margin-bottom:15px;color:#8b0000;font-size:22px;font-weight:600;}
+.card p{color:#666;line-height:1.8;}
+.worldwide{background:linear-gradient(135deg,#f8f9fb 0%,#e9ecef 100%);padding:100px 8%;}
+.worldwide-content{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;}
+.worldwide-text h3{font-size:32px;color:#8b0000;margin-bottom:20px;}
+.worldwide-text p{color:#555;margin-bottom:25px;font-size:17px;}
+.worldwide-text button{background:#8b0000;color:#fff;padding:14px 30px;border:none;border-radius:8px;cursor:pointer;font-weight:600;transition:0.3s;}
+.worldwide-text button:hover{background:#a00000;transform:translateY(-3px);}
+.worldwide-map{background:#fff;padding:40px;border-radius:15px;box-shadow:0 10px 30px rgba(0,0,0,0.1);}
+.country-list h4{color:#8b0000;margin-bottom:20px;font-size:20px;}
+.country-list ul li{padding:10px 0;border-bottom:1px solid #eee;display:flex;justify-content:space-between;}
+.country-list ul li:last-child{border-bottom:none;}
+.why{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:30px;}
+.why-box{background:#fff;padding:40px 30px;border-radius:15px;box-shadow:0 8px 25px rgba(0,0,0,0.08);text-align:center;opacity:0;transform:translateY(30px);transition:all 0.4s;}
+.why-box:hover{transform:translateY(-10px);box-shadow:0 15px 40px rgba(0,0,0,0.12);}
+.why-box i{font-size:50px;color:#8b0000;margin-bottom:20px;}
+.why-box h3{margin-bottom:15px;color:#8b0000;font-size:24px;}
+.why-box p{color:#666;line-height:1.8;}
+.testimonials{background:linear-gradient(135deg,#8b0000 0%,#a00000 100%);color:#fff;padding:100px 8%;}
+.testimonials h2{color:#fff;}
+.testimonials-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(350px,1fr));gap:30px;margin-top:50px;}
+.testimonial-card{background:#fff;color:#333;padding:35px;border-radius:15px;box-shadow:0 10px 30px rgba(0,0,0,0.2);opacity:0;transform:translateY(30px);transition:all 0.4s;}
+.testimonial-card:hover{transform:translateY(-8px);}
+.testimonial-card .stars{color:#ffa500;margin-bottom:15px;font-size:18px;}
+.testimonial-card p{font-style:italic;margin-bottom:20px;line-height:1.8;color:#555;}
+.testimonial-card .author{font-weight:600;color:#8b0000;font-size:18px;}
+.testimonial-card .role{color:#888;font-size:14px;}
+footer{background:#111;color:#fff;padding:60px 8% 30px;}
+.footer-content{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:40px;margin-bottom:40px;}
+.footer-section h4{color:#8b0000;margin-bottom:20px;font-size:18px;}
+.footer-section ul li{margin-bottom:10px;}
+.footer-section ul li a{color:#aaa;transition:0.3s;}
+.footer-section ul li a:hover{color:#fff;padding-left:5px;}
+.footer-section p{color:#aaa;line-height:1.8;}
+.footer-social{display:flex;gap:15px;margin-top:20px;}
+.footer-social a{width:40px;height:40px;background:#8b0000;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;transition:0.3s;}
+.footer-social a:hover{background:#a00000;transform:translateY(-3px);}
+.footer-bottom{text-align:center;padding-top:30px;border-top:1px solid #333;color:#888;}
+.show{opacity:1 !important;transform:translateY(0) !important;}
+@media(max-width:992px){.hero h1{font-size:42px;}.worldwide-content{grid-template-columns:1fr;}.stats{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:768px){.hero h1{font-size:36px;}.hero p{font-size:18px;}section{padding:70px 5%;}.stats{margin-left:5%;margin-right:5%;}}
+</style>
+</head>
+<body>
+<div class="topbar"><div><i class="fas fa-envelope"></i> info@medaxis.com</div><div><i class="fas fa-phone"></i> +254 712 345 678</div></div>
+<nav><h2><span>Med</span>Axis</h2><ul><li><a href="index.html" class="active">Home</a></li><li><a href="about.html">About Us</a></li><li><a href="blog.html">Blog</a></li><li><a href="products.html">Products and Services</a></li><li><a href="contact.html">Contact</a></li><li><a href="contact.html" class="demo">Book Demo</a></li></ul></nav>
+<div class="hero" id="home"><div class="hero-content"><h1>AI-Powered Healthcare Management System for Modern Clinics & Hospitals</h1><p>Trusted by 5,000+ Healthcare Professionals Worldwide. Complete practice management solution with EMR, e-prescriptions, billing, and 24/7 support.</p><div class="hero-buttons"><button class="btn-primary" onclick="window.location.href='contact.html'">Get Free Quote <i class="fas fa-arrow-right"></i></button><button class="btn-secondary" onclick="window.location.href='products.html'"><i class="fas fa-play-circle"></i> Watch Demo</button></div></div></div>
+<div class="stats"><div class="stat-item"><h3 class="counter" data-target="4500">0</h3><p>Clinics</p></div><div class="stat-item"><h3 class="counter" data-target="12">0</h3><p>Million+ Appointments</p></div><div class="stat-item"><h3 class="counter" data-target="1000000">0</h3><p>Patients</p></div><div class="stat-item"><h3 class="counter" data-target="15">0</h3><p>Years Experience</p></div><div class="stat-item"><h3 class="counter" data-target="950000">0</h3><p>Prescriptions</p></div><div class="stat-item"><h3 class="counter" data-target="8000">0</h3><p>Doctors</p></div></div>
+<section id="features"><h2>Comprehensive Healthcare Solutions</h2><p class="section-subtitle">Everything you need to run your clinic or hospital efficiently</p><div class="features"><div class="card"><i class="fas fa-calendar-check"></i><h3>Appointment Scheduling</h3><p>Manage patient appointments, online bookings, and reminders with ease. Reduce no-shows and improve clinic efficiency with our intelligent scheduling system.</p></div><div class="card"><i class="fas fa-pills"></i><h3>Pharmacy Management</h3><p>Handle prescriptions, stock tracking, and medicine dispensing seamlessly. Stay updated on inventory levels and ensure timely availability of medicines.</p></div><div class="card"><i class="fas fa-flask"></i><h3>Lab Management</h3><p>Create and manage lab test orders, track results, and store reports digitally. Improve accuracy, reduce paperwork, and deliver lab results faster.</p></div><div class="card"><i class="fas fa-users"></i><h3>CRM System</h3><p>Organize leads, consultations, and follow-ups with powerful CRM tools. Improve practice efficiency and grow your clinic with structured patient management.</p></div><div class="card"><i class="fas fa-comments"></i><h3>Communication Hub</h3><p>Send reminders, updates, and follow-ups through SMS, Email, and WhatsApp. Keep patients engaged and ensure stronger doctor-patient relationships.</p></div><div class="card"><i class="fas fa-user-clock"></i><h3>HR Management</h3><p>Track employee Punch In/Out, working hours, and status in real time. Manage leave requests and approvals seamlessly from one dashboard.</p></div></div></section>
+<section class="worldwide" id="worldwide"><div class="worldwide-content"><div class="worldwide-text"><h3>Worldwide Presence</h3><p>MedAxis serves healthcare facilities across multiple continents, providing world-class clinic management solutions to diverse markets.</p><p>Our clients span across Kenya, USA, UAE, India, Zambia, Nigeria, Oman, and many more countries. We understand local healthcare needs while delivering global standards.</p><button onclick="window.location.href='products.html'">Explore Our Product Range</button></div><div class="worldwide-map"><div class="country-list"><h4><i class="fas fa-globe-africa"></i> Active Countries</h4><ul><li><span><i class="fas fa-flag"></i> Kenya</span><strong>500+ Clinics</strong></li><li><span><i class="fas fa-flag"></i> United States</span><strong>200+ Clinics</strong></li><li><span><i class="fas fa-flag"></i> UAE</span><strong>180+ Clinics</strong></li><li><span><i class="fas fa-flag"></i> India</span><strong>1500+ Clinics</strong></li><li><span><i class="fas fa-flag"></i> Nigeria</span><strong>300+ Clinics</strong></li><li><span><i class="fas fa-flag"></i> Zambia</span><strong>150+ Clinics</strong></li></ul></div></div></div></section>
+<section><h2>Why Choose MedAxis?</h2><p class="section-subtitle">Trusted healthcare management system globally</p><div class="why"><div class="why-box"><i class="fas fa-cogs"></i><h3>Complete Practice Management</h3><p>Our platform handles e-medical consultation, e-prescription, patient registration, appointment scheduling, EMR storage/retrieval, secure messaging, e-billing, and expense tracking.</p></div><div class="why-box"><i class="fas fa-cloud"></i><h3>Cloud & Premise-Based</h3><p>Available as both premise-based/offline and cloud-based solutions with mobile apps. Choose what works best for your practice.</p></div><div class="why-box"><i class="fas fa-headset"></i><h3>Expert Support Team</h3><p>Backed by healthcare and tech experts, we offer strong technology framework, feature-rich solutions, and 24/7 real-time customer support.</p></div><div class="why-box"><i class="fas fa-shield-alt"></i><h3>Secure & Reliable</h3><p>Easy navigation, secure data handling, and reliable performance for single clinics, polyclinics, and multi-location medical practices.</p></div></div></section>
+<section class="testimonials" id="testimonials"><h2>Why Healthcare Providers Love MedAxis</h2><p class="section-subtitle" style="color:#fff;opacity:0.9;">Real stories from real users</p><div class="testimonials-grid"><div class="testimonial-card"><div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><p>"I have been using MedAxis for 12 years. Their team not only helped me migrate smoothly from the older to the newer version but also provides quick assistance through WhatsApp whenever needed."</p><div class="author">Dr. Sarah Mitchell</div><div class="role">Dentist, Nairobi</div></div><div class="testimonial-card"><div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><p>"MedAxis has been perfectly customized for physiotherapy with detailed procedure entry and invoicing. The team's support has been excellent throughout. Highly recommended!"</p><div class="author">Dr. James Kamau</div><div class="role">Physiotherapist, Mombasa</div></div><div class="testimonial-card"><div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><p>"MedAxis simplified our daily operations in cosmetology, covering customer relations and finance with full staff training. It also handles the pharmacy side smoothly."</p><div class="author">Amina Hassan</div><div class="role">Clinic Owner, Dubai</div></div></div></section>
+<footer><div class="footer-content"><div class="footer-section"><h4>About MedAxis</h4><p>AI-powered healthcare management system trusted by 5,000+ clinics and hospitals worldwide. Transforming healthcare delivery through technology.</p><div class="footer-social"><a href="#"><i class="fab fa-facebook-f"></i></a><a href="#"><i class="fab fa-twitter"></i></a><a href="#"><i class="fab fa-linkedin-in"></i></a><a href="#"><i class="fab fa-instagram"></i></a></div></div><div class="footer-section"><h4>Quick Links</h4><ul><li><a href="index.html">Home</a></li><li><a href="about.html">About Us</a></li><li><a href="blog.html">Blog</a></li><li><a href="products.html">Products and Services</a></li><li><a href="contact.html">Contact</a></li></ul></div><div class="footer-section"><h4>Support</h4><ul><li><a href="#">FAQ</a></li><li><a href="#">Create Support Ticket</a></li><li><a href="contact.html">Contact Us</a></li><li><a href="#">Privacy Policy</a></li></ul></div><div class="footer-section"><h4>Company</h4><ul><li><a href="about.html">About Us</a></li><li><a href="#">Careers</a></li><li><a href="blog.html">Blog</a></li><li><a href="#">Partners</a></li></ul></div></div><div class="footer-bottom"><p>&copy; 2026 MedAxis Healthcare Systems. All Rights Reserved.</p></div></footer>
+<script src="script.js"></script>
+</body>
+</html>

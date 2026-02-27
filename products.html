@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Products & Services | MedAxis</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+body{background:#f8f9fb;color:#333;line-height:1.6;overflow-x:hidden;}
+a{text-decoration:none;color:inherit;}
+ul{list-style:none;}
+.topbar{background:#8b0000;color:#fff;padding:10px 8%;display:flex;justify-content:space-between;font-size:14px;}
+nav{background:#fff;padding:20px 8%;display:flex;justify-content:space-between;align-items:center;box-shadow:0 3px 15px rgba(0,0,0,0.08);position:sticky;top:0;z-index:1000;}
+nav h2{color:#8b0000;font-size:28px;}
+nav ul{display:flex;align-items:center;}
+nav ul li{margin-left:30px;}
+nav ul li a{font-weight:500;transition:0.3s;font-size:15px;}
+nav ul li a:hover{color:#d00000;}
+nav ul li a.active{color:#8b0000;font-weight:600;}
+nav .demo{background:#8b0000;color:#fff;padding:10px 20px;border-radius:6px;font-weight:600;transition:0.3s;}
+nav .demo:hover{background:#a00000;transform:translateY(-2px);}
+span{color:#00ced1;}
+.page-header{background:linear-gradient(135deg,rgba(139,0,0,0.95) 0%,rgba(139,0,0,0.85) 100%),url('https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=1920');background-size:cover;background-position:center;color:white;padding:120px 8% 80px;text-align:center;border-bottom-right-radius:100px;}
+.page-header h1{font-size:48px;margin-bottom:15px;}
+.page-header p{font-size:20px;opacity:0.95;}
+section{padding:100px 8%;}
+section h2{color:#8b0000;font-size:38px;margin-bottom:20px;text-align:center;font-weight:700;}
+.section-subtitle{text-align:center;color:#666;margin-bottom:50px;font-size:18px;}
+.products-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(350px,1fr));gap:30px;margin-bottom:80px;}
+.product-card{background:#fff;border-radius:20px;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,0.1);transition:all 0.3s;opacity:0;transform:translateY(30px);}
+.product-card:hover{transform:translateY(-10px);box-shadow:0 20px 40px rgba(0,0,0,0.15);}
+.product-header{background:linear-gradient(135deg,#8b0000,#a00000);color:white;padding:40px 30px;text-align:center;}
+.product-header h3{font-size:28px;margin-bottom:10px;}
+.product-header .price{font-size:42px;font-weight:700;margin:15px 0;}
+.product-header .period{opacity:0.9;}
+.product-body{padding:30px;}
+.product-body ul{margin-bottom:25px;}
+.product-body li{padding:12px 0;border-bottom:1px solid #eee;display:flex;align-items:center;gap:10px;}
+.product-body li i{color:#8b0000;}
+.product-body li:last-child{border-bottom:none;}
+.product-card .btn{display:block;width:100%;padding:15px;background:#8b0000;color:white;text-align:center;border-radius:8px;font-weight:600;transition:0.3s;border:none;cursor:pointer;}
+.product-card .btn:hover{background:#a00000;transform:translateY(-2px);}
+.services-section{background:#fff;padding:60px;border-radius:20px;margin-top:50px;}
+.services-section h3{color:#8b0000;font-size:32px;margin-bottom:40px;text-align:center;}
+.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:30px;}
+.service-item{padding:30px;border:2px solid #f8f9fb;border-radius:15px;text-align:center;transition:all 0.3s;opacity:0;transform:translateY(30px);}
+.service-item:hover{border-color:#8b0000;transform:translateY(-5px);}
+.service-item i{font-size:50px;color:#8b0000;margin-bottom:20px;}
+.service-item h4{color:#8b0000;margin-bottom:15px;font-size:22px;}
+.service-item p{color:#666;line-height:1.6;}
+.cta-section{background:linear-gradient(135deg,#8b0000,#a00000);color:white;padding:80px 8%;text-align:center;border-radius:20px;margin-top:80px;}
+.cta-section h3{font-size:36px;margin-bottom:20px;}
+.cta-section p{font-size:18px;margin-bottom:30px;opacity:0.9;}
+.cta-section .btn{display:inline-block;padding:15px 40px;background:white;color:#8b0000;border-radius:8px;font-weight:600;transition:0.3s;}
+.cta-section .btn:hover{transform:translateY(-5px);box-shadow:0 10px 25px rgba(0,0,0,0.2);}
+footer{background:#111;color:#fff;padding:60px 8% 30px;}
+.footer-content{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:40px;margin-bottom:40px;}
+.footer-section h4{color:#8b0000;margin-bottom:20px;font-size:18px;}
+.footer-section ul li{margin-bottom:10px;}
+.footer-section ul li a{color:#aaa;transition:0.3s;}
+.footer-section ul li a:hover{color:#fff;padding-left:5px;}
+.footer-section p{color:#aaa;line-height:1.8;}
+.footer-social{display:flex;gap:15px;margin-top:20px;}
+.footer-social a{width:40px;height:40px;background:#8b0000;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;transition:0.3s;}
+.footer-social a:hover{background:#a00000;transform:translateY(-3px);}
+.footer-bottom{text-align:center;padding-top:30px;border-top:1px solid #333;color:#888;}
+.show{opacity:1 !important;transform:translateY(0) !important;}
+@media(max-width:992px){.page-header h1{font-size:38px;}}
+@media(max-width:768px){section{padding:70px 5%;}.page-header{padding:100px 5% 60px;}}
+</style>
+</head>
+<body>
+<div class="topbar"><div><i class="fas fa-envelope"></i> info@medaxis.com</div><div><i class="fas fa-phone"></i> +254 712 345 678</div></div>
+<nav><h2><span>Med</span>Axis</h2><ul><li><a href="index.html">Home</a></li><li><a href="about.html">About Us</a></li><li><a href="blog.html">Blog</a></li><li><a href="products.html" class="active">Products and Services</a></li><li><a href="contact.html">Contact</a></li><li><a href="contact.html" class="demo">Book Demo</a></li></ul></nav>
+<div class="page-header"><h1>Our Products & Services</h1><p>Comprehensive Healthcare Solutions for Every Need</p></div>
+<section>
+<div class="products-grid">
+<div class="product-card">
+<div class="product-header"><h3>Starter Package</h3><div class="price">$99<span class="period">/month</span></div><p>Perfect for small clinics</p></div>
+<div class="product-body">
+<ul>
+<li><i class="fas fa-check"></i> Patient Management</li>
+<li><i class="fas fa-check"></i> Appointment Scheduling</li>
+<li><i class="fas fa-check"></i> Basic EMR</li>
+<li><i class="fas fa-check"></i> Email Support</li>
+<li><i class="fas fa-check"></i> Mobile App Access</li>
+</ul>
+<button class="btn" onclick="window.location.href='contact.html'">Get Started</button>
+</div>
+</div>
+<div class="product-card">
+<div class="product-header" style="background:linear-gradient(135deg,#a00000,#c00000);"><h3>Professional Package</h3><div class="price">$249<span class="period">/month</span></div><p>For growing practices</p></div>
+<div class="product-body">
+<ul>
+<li><i class="fas fa-check"></i> Everything in Starter</li>
+<li><i class="fas fa-check"></i> Pharmacy Management</li>
+<li><i class="fas fa-check"></i> Lab Integration</li>
+<li><i class="fas fa-check"></i> Billing & Invoicing</li>
+<li><i class="fas fa-check"></i> 24/7 Phone Support</li>
+<li><i class="fas fa-check"></i> Advanced Analytics</li>
+</ul>
+<button class="btn" onclick="window.location.href='contact.html'">Get Started</button>
+</div>
+</div>
+<div class="product-card">
+<div class="product-header" style="background:linear-gradient(135deg,#7f1d1d,#991b1b);"><h3>Enterprise Package</h3><div class="price">Custom</div><p>For hospitals & large clinics</p></div>
+<div class="product-body">
+<ul>
+<li><i class="fas fa-check"></i> Everything in Professional</li>
+<li><i class="fas fa-check"></i> Multi-location Support</li>
+<li><i class="fas fa-check"></i> Custom Integrations</li>
+<li><i class="fas fa-check"></i> AI-Powered Insights</li>
+<li><i class="fas fa-check"></i> Dedicated Account Manager</li>
+<li><i class="fas fa-check"></i> Custom Development</li>
+</ul>
+<button class="btn" onclick="window.location.href='contact.html'">Contact Sales</button>
+</div>
+</div>
+</div>
+<div class="services-section">
+<h3>Additional Services</h3>
+<div class="services-grid">
+<div class="service-item"><i class="fas fa-rocket"></i><h4>Implementation</h4><p>Seamless setup and data migration from your existing systems with zero downtime.</p></div>
+<div class="service-item"><i class="fas fa-graduation-cap"></i><h4>Training</h4><p>Comprehensive training programs for your entire staff, online and on-site options.</p></div>
+<div class="service-item"><i class="fas fa-tools"></i><h4>Customization</h4><p>Tailored solutions to match your specific workflow and specialty requirements.</p></div>
+<div class="service-item"><i class="fas fa-shield-alt"></i><h4>Security</h4><p>HIPAA-compliant infrastructure with 99.9% uptime guarantee and data encryption.</p></div>
+<div class="service-item"><i class="fas fa-chart-line"></i><h4>Analytics</h4><p>Advanced reporting and business intelligence tools for data-driven decisions.</p></div>
+<div class="service-item"><i class="fas fa-video"></i><h4>Telemedicine</h4><p>Integrated video consultation capabilities with screen sharing and e-prescriptions.</p></div>
+</div>
+</div>
+<div class="cta-section">
+<h3>Ready to Transform Your Practice?</h3>
+<p>Join 5,000+ healthcare providers who trust MedAxis for their clinic management needs.</p>
+<a href="contact.html" class="btn"><i class="fas fa-calendar-check"></i> Book a Free Demo</a>
+</div>
+</section>
+<footer><div class="footer-content"><div class="footer-section"><h4>About MedAxis</h4><p>AI-powered healthcare management system trusted by 5,000+ clinics worldwide.</p><div class="footer-social"><a href="#"><i class="fab fa-facebook-f"></i></a><a href="#"><i class="fab fa-twitter"></i></a><a href="#"><i class="fab fa-linkedin-in"></i></a><a href="#"><i class="fab fa-instagram"></i></a></div></div><div class="footer-section"><h4>Quick Links</h4><ul><li><a href="index.html">Home</a></li><li><a href="about.html">About Us</a></li><li><a href="blog.html">Blog</a></li><li><a href="products.html">Products</a></li><li><a href="contact.html">Contact</a></li></ul></div><div class="footer-section"><h4>Support</h4><ul><li><a href="#">FAQ</a></li><li><a href="#">Support Ticket</a></li><li><a href="contact.html">Contact Us</a></li></ul></div><div class="footer-section"><h4>Company</h4><ul><li><a href="about.html">About Us</a></li><li><a href="#">Careers</a></li><li><a href="blog.html">Blog</a></li></ul></div></div><div class="footer-bottom"><p>&copy; 2026 MedAxis Healthcare Systems. All Rights Reserved.</p></div></footer>
+<script src="script.js"></script>
+</body>
+</html>
